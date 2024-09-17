@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropCare | Location & Crop Choice</title>
+
+    <!-- Google Maps JavaScript API with your API Key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBuZw0MkaUY_fLwu6p-cIpEupa7logVpw&callback=initMap" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js"></script>
+
+    <script>
+        // Firebase configuration (replace with your Firebase project details)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firestore
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+    </script>
+
+    <!-- Link to Your CSS -->
+    <link rel="stylesheet" href="style_location_crop.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Select Your Location and Crop Choice</h1>
+        
+        <!-- Map Container -->
+        <div id="map"></div>
+
+        <!-- Crop Selection Dropdown -->
+        <div class="crop-selection">
+            <label for="cropChoice">Select Crop:</label>
+            <select id="cropChoice">
+                <option value="wheat">Wheat</option>
+                <option value="rice">Rice</option>
+                <option value="maize">Maize</option>
+                <option value="sugarcane">Sugarcane</option>
+                <!-- Add more crop options as needed -->
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button id="submit">Submit</button>
+    </div>
+
+    <!-- Link to Your JavaScript -->
+    <script src="script_location_crop.js"></script>
+</body>
+</html>
